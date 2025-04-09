@@ -1,9 +1,11 @@
 import HomeCarrousal from "./components/HomeCarrousal"
+import LatestProducts from "./components/LatestProducts"
 
 const Home = () => {
   return (
-    <div className=" mt-4 mb-4 flex w-full justify-center flex-auto  ">
+    <div className="    w-full justify-center h-full  ">
       <HomeCarrousal/>
+      <LatestProducts/>
     </div>
   )
 }

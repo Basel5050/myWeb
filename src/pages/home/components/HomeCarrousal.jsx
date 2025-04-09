@@ -2,77 +2,30 @@ import React from 'react'
 import { Carousel, IconButton } from "@material-tailwind/react";
 
 const HomeCarrousal = () => {
-  return (
-    <div className=' flex w-1/2  '> <Carousel
-    className="rounded-xl"
-    prevArrow={({ handlePrev }) => (
-      <IconButton
-        variant="text"
-        color="white"
-        size="lg"
-        onClick={handlePrev}
-        className="!absolute top-2/4 left-4 -translate-y-2/4"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={2}
-          stroke="currentColor"
-          className="h-6 w-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
-          />
-        </svg>
-      </IconButton>
-    )}
-    nextArrow={({ handleNext }) => (
-      <IconButton
-        variant="text"
-        color="white"
-        size="lg"
-        onClick={handleNext}
-        className="!absolute top-2/4 !right-4 -translate-y-2/4"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={2}
-          stroke="currentColor"
-          className="h-6 w-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-          />
-        </svg>
-      </IconButton>
-    )}
-  >
-    <img
-      src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-      alt="image 1"
-      className="h-full w-full object-cover"
-    />
-    <img
-      src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-      alt="image 2"
-      className="h-full w-full object-cover"
-    />
-    <img
-      src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
-      alt="image 3"
-      className="h-full w-full object-cover"
-    />
-  </Carousel>
-
-</div>
-  )
+  
+    return (
+      <section className=" w-full relative bg-cover bg-center bg-no-repeat text-white bg-[url('/slider-bg.jpg')]">
+        <div className="container mx-auto px-4 py-40 flex flex-col lg:flex-row items-center justify-between min-h-[90vh]:">
+          
+          <div className="lg:w-1/2 mb-10 lg:mb-0">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              Best Jewellery Collection
+            </h1>
+            <p className="text-gray-300 mb-6">
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The point
+              of using Lorem.
+            </p>
+            <button className="bg-transparent border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white transition px-6 py-3 rounded-md font-medium">
+              Shop Now
+            </button>
+          </div>
+  
+         
+          
+        </div>
+      </section>
+    );
 }
 
 export default HomeCarrousal
