@@ -1,0 +1,33 @@
+{
+    "users": [
+    { "id": 1,
+        "name": "json-server",
+        "email": "typicode",
+        "password" : 12454 ,
+        "role"  : "admin"
+    }
+    ],
+    "products": [
+      { "id": 1, 
+      "image": "https://m.media-amazon.com/images/I/71Azxw1VWeL._AC_SX679_.jpg",
+       "description": "Samsung Galaxy A55 5G",
+    "price": "20,199"
+ },
+ { "id": 1, 
+ "image": "https://m.media-amazon.com/images/I/71Azxw1VWeL._AC_SX679_.jpg",
+  "description": "Samsung Galaxy A55 5G",
+"price": "20,199"
+},
+{ "id": 2, 
+"image": "https://i.ebayimg.com/images/g/rMYAAOSwUUVm4AeF/s-l1600.webp",
+ "description": "Apple iPhone 16 Pro Max 6.9",
+"price": "104,889"
+},
+{ "id": 3, 
+"image": "https://m.media-amazon.com/images/I/31ZshpoAwsL._AC_.jpg",
+ "description": "Oppo Reno 13F 4G",
+"price": "14,637"
+}
+    ],
+    "profile": { "name": "typicode" }
+}
