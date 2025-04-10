@@ -3,8 +3,8 @@ import MyItems from '../../myItems/MyItems'
 
 const LatestProducts = () => {
   return (
-    <div>
-<div>LatestProducts</div>
+    <div className=' justify-center  items-center'>
+<div >LatestProducts</div>
 <MyItems/>
     </div>
     

@@ -33,7 +33,7 @@ const MyCards = () => {
     <div className='mt-6 mb-6 flex  flex-wrap justify-evenly p-2 m-2'>
       {products.map(({id,image,description,price},index)=>(
 
-<Card  variant="gradient" className="w-full max-w-[20rem] p-8 bg-brown-300 mt-4">
+<Card key={index}  variant="gradient" className="w-full max-w-[20rem] p-8 bg-brown-300 mt-4 ">
 <CardHeader
   floated={false}
   shadow={false}
@@ -56,7 +56,7 @@ const MyCards = () => {
     <span className="self-end text-3xl">/mo</span>
   </Typography>
 </CardHeader>
-<img src={image} alt="" />
+<img src={image} alt="" className='w-auto'/>
 <CardFooter className="mt-12 p-0">
   <Button
     size="lg"

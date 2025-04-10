@@ -1,5 +1,12 @@
 import React from 'react'
 import { Carousel, IconButton } from "@material-tailwind/react";
+import {
+ 
+  Typography,
+  
+} from "@material-tailwind/react"
+import { Link } from 'react-router-dom'
+import { Button } from "@material-tailwind/react";
 
 const HomeCarrousal = () => {
   
@@ -16,9 +23,14 @@ const HomeCarrousal = () => {
               the readable content of a page when looking at its layout. The point
               of using Lorem.
             </p>
-            <button className="bg-transparent border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white transition px-6 py-3 rounded-md font-medium">
-              Shop Now
-            </button>
+            <Typography 
+                    as={Link}
+                    to = '/products'
+                    variant="small"
+                    color="blue-gray"
+                    className="p-1 font-medium">
+                    <Button className="bg-transparent border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white transition px-6 py-3 rounded-md font-medium"   size='lg'>Shop now</Button>
+                    </Typography>
           </div>
   
          
