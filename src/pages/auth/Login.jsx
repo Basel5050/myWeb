@@ -10,6 +10,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 import { Link } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 const Login = () => {
 const [logginData , setLogginData] = useState({
@@ -18,13 +19,44 @@ const [logginData , setLogginData] = useState({
 })
 
 const emailValidation = (e)=>{
-setLogginData({...logginData, email:e   })
-;
-return logginData.includes("@")
+setLogginData({...logginData, email:e.target.value   })
+if (!logginData.email.includes("@")) {
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: "Please enter valid Email!",
+    footer: '<a href="#">Why do I have this issue?</a>'
+  });
+  console.log(e.target.value);
+  
+}else{
+  Swal.fire({
+    title: "Email!",
+    icon: "success",
+    draggable: true
+  })
 }
+}
+
 const passwordValidation = (e)=>{
-  setLogginData({...logginData, password:e   })
-  console.log(logginData)
+  setLogginData({...logginData, password:e.target.value   })
+  console.log(logginData.password.toString.length);
+  
+  if (logginData.password.toString.length<7) {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Please enter valid Password!",
+      footer: '<a href="#">Why do I have this issue?</a>'
+    });
+  }
+  else{
+    Swal.fire({
+      title: "Password!",
+      icon: "success",
+      draggable: true
+    })
+  }
 }
   return (
 <form >
@@ -40,8 +72,8 @@ const passwordValidation = (e)=>{
       </Typography>
     </CardHeader>
     <CardBody className="flex flex-col gap-4 px-4 py-4">
-      <Input label="Email" size="lg" onChange={(e)=>emailValidation(e.target.value)} />
-      <Input label="Password" size="lg" onChange={(e)=>passwordValidation(e.target.value)} />
+      <Input label="Email" size="lg" onBlur={(e)=>emailValidation(e)} />
+      <Input label="Password" size="lg" onBlur={(e)=>passwordValidation(e)} />
       <div className="-ml-2.5">
         <Checkbox label="Remember Me" />
       </div>
