@@ -1,4 +1,5 @@
 import React from 'react'
+import  { useContext, useState } from 'react'
 
 import {
     Navbar,
@@ -10,9 +11,11 @@ import {
   import { MdNavigation } from "react-icons/md";
   import { MdCoronavirus } from "react-icons/md";
 import { Link } from 'react-router-dom';
+import AppContext from '../../context/context';
 
 
  const NavList = ()=>{
+   
     return (
         <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <Typography
@@ -55,7 +58,7 @@ import { Link } from 'react-router-dom';
     )
  } 
 const NavBar = () => {
-    const [openNav, setOpenNav] = React.useState(false);
+    const [openNav, setOpenNav] = useState(false);
  
   const handleWindowResize = () =>
     window.innerWidth >= 960 && setOpenNav(false);
@@ -67,13 +70,15 @@ const NavBar = () => {
       window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
+    
+  const {userData,isLogged} = useContext(AppContext)
  
   return (
     
     <div>
-<Navbar className="mx-auto max-w-screen-2xl px-6 py-3 bg-deep-orange-800">
-      <div className="flex items-center justify-between text-blue-gray-900">
-        <Typography
+<Navbar  className="mx-auto max-w-screen-2xl px-6 py-3 bg-deep-orange-800">
+      <div onClick={console.log(userData,isLogged)      } className="flex items-center justify-between text-blue-gray-900">
+        <Typography 
          as={Link}
         to='/'
           variant="h6"

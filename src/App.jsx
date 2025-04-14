@@ -10,9 +10,21 @@ import axios from 'axios'
 import AppContext from './context/context'
 
 function App() {
+const [users,setUsers] = useState([])
   const [products , setProducts] = useState([])
+  const [userData,setUserData] = useState({})
+  const [isLogged,setIsLogged] = useState(false)
   
 useEffect(()=>{
+  axios({
+    method: 'GET',
+    url: "http://localhost:3000/users"
+  }).then((res) => {
+    setUsers(res.data)
+
+  }).catch((error) => {
+    console.error("Error fetching data:", error);}),
+
   axios({
     method: 'GET',
     url: "http://localhost:3000/products"
@@ -22,12 +34,12 @@ useEffect(()=>{
   }).catch((error) => {
     console.error("Error fetching data:", error);})
 },[])
-console.log(products);
+
 
 
   return (
 
-    <AppContext.Provider value={{products}}>
+    <AppContext.Provider value={{products,users,userData,setUserData,setIsLogged,isLogged}}>
  <div className=' w-full '>
     <NavBar/>
     <Routes>

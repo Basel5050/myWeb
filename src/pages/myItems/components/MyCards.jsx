@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import {
     Card,
     CardHeader,
@@ -8,6 +8,7 @@ import {
     Button,
   } from "@material-tailwind/react";
 import AppContext from '../../../context/context';
+import MyProduct from './MyProduct';
    
   function CheckIcon() {
     return (
@@ -29,51 +30,55 @@ import AppContext from '../../../context/context';
   }
 const MyCards = () => {
   const {products}= useContext(AppContext)
+  
+  
   return (
-    <div className='mt-6 mb-6 flex  flex-wrap justify-evenly p-2 m-2'>
-      {products.map(({id,image,description,price},index)=>(
+    <div className="flex flex-wrap justify-center gap-6 p-4">
+    {products.map(({ id, image, secImage, description, price }) => (
+      <Card
+        key={id}
+        variant="gradient"
+        className="w-[280px] bg-brown-300 shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col justify-between"
+      >
+        <CardHeader
+          floated={false}
+          shadow={false}
+          color="transparent"
+          className="m-0 p-4 pb-2 text-center border-b border-white/10"
+        >
+          <Typography
+            variant="small"
+            color="white"
+            className="font-medium uppercase"
+          >
+            {description}
+          </Typography>
+          <Typography
+            variant="h2"
+            color="white"
+            className="mt-4 text-2xl font-semibold"
+          >
+            ${price}
+          </Typography>
+        </CardHeader>
 
-<Card key={index}  variant="gradient" className="w-full max-w-[20rem] p-8 bg-brown-300 mt-4 ">
-<CardHeader
-  floated={false}
-  shadow={false}
-  color="transparent"
-  className="m-0 mb-8 rounded-none border-b border-white/10 pb-8 text-center"
->
-  <Typography
-    variant="small"
-    color="white"
-    className="font-normal uppercase"
-  >
-    {description}
-  </Typography>
-  <Typography
-    variant="h1"
-    color="white"
-    className="mt-6 flex justify-center gap-1 text-3xl font-normal"
-  >
-    <span className="mt-0 text-3xl">$</span>{price}{" "}
-    <span className="self-end text-3xl">/mo</span>
-  </Typography>
-</CardHeader>
-<img src={image} alt="" className='w-auto'/>
-<CardFooter className="mt-12 p-0">
-  <Button
-    size="lg"
-    color="white"
-    className="hover:scale-[1.02] focus:scale-[1.02] active:scale-100"
-    ripple={false}
-    fullWidth={true}
-  >
-    Buy Now
-  </Button>
-</CardFooter>
-</Card>
+        <div className="p-4 flex justify-center">
+          <MyProduct image={image} secImage={secImage} />
+        </div>
 
-      )
-    
-    )}
-    </div>
+        <CardFooter className="px-4 pb-4 mt-auto">
+          <Button
+            size="lg"
+            color="white"
+            className="w-full hover:scale-[1.02] focus:scale-[1.02] active:scale-100 transition-transform"
+            ripple={false}
+          >
+            Buy Now
+          </Button>
+        </CardFooter>
+      </Card>
+    ))}
+  </div>
    ) 
   
   

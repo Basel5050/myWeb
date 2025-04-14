@@ -1,33 +1,62 @@
 {
-    "users": [
-    { "id": 1,
-        "name": "json-server",
-        "email": "typicode",
-        "password" : 12454 ,
-        "role"  : "admin"
+  "users": [
+    {
+      "id": 1,
+      "name": "basel",
+      "email": "baselashraf1@gmail.com",
+      "password": "1234567",
+      "role": "admin",
+      "cart": []
+    },
+    {
+      "name": "maro",
+      "email": "maro@gmail.com",
+      "password": "1234567",
+      "role": "user",
+      "cart": [],
+      "id": 2
+    },
+    {
+      "name": "memo",
+      "email": "memo@gmail.com",
+      "password": "123456789",
+      "role": "user",
+      "cart": [],
+      "id": 3
     }
-    ],
-    "products": [
-      { "id": 1, 
-      "image": "https://m.media-amazon.com/images/I/71Azxw1VWeL._AC_SX679_.jpg",
-       "description": "Samsung Galaxy A55 5G",
-    "price": "20,199"
- },
- { "id": 1, 
- "image": "https://m.media-amazon.com/images/I/71Azxw1VWeL._AC_SX679_.jpg",
-  "description": "Samsung Galaxy A55 5G",
-"price": "20,199"
-},
-{ "id": 2, 
-"image": "https://i.ebayimg.com/images/g/rMYAAOSwUUVm4AeF/s-l1600.webp",
- "description": "Apple iPhone 16 Pro Max 6.9",
-"price": "104,889"
-},
-{ "id": 3, 
-"image": "https://m.media-amazon.com/images/I/31ZshpoAwsL._AC_.jpg",
- "description": "Oppo Reno 13F 4G",
-"price": "14,637"
-}
-    ],
-    "profile": { "name": "typicode" }
+    
+  ],
+  "products": [
+    {
+      "id": 1,
+      "image": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/4281/18902/114912500052450-1__98776.1723639920.jpg",
+      "secImage": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/4281/18903/114912500052450-2__88751.1723639921.jpg",
+      "description": "Links Chain Necklace in 18K Gold",
+      "price": "8,100"
+    },
+    {
+      "id": 2,
+      "image": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/3450/12489/413391800072171-2__08454.1723455607.jpg",
+      "secImage": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/3450/12488/413391800072171-1__71662.1736404496.jpg",
+      "description": "Circle Cubic Zirconia Twin Rings in 18K Gold",
+      "price": "18,600"
+    },
+    {
+      "id": 3,
+      "image": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/3907/13545/113011400067001-1__02349.1730966432.jpg",
+      "secImage": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/3907/13546/113011400067001-2__25367.1730966432.jpg",
+      "description": "Links Shape Set in 18K Gold - 2 pieces",
+      "price": "63,340"
+    },
+    {
+      "id": 4,
+      "image": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/3928/13615/113431300117001-1__04553.1723456574.jpg",
+      "secImage": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/3928/13616/113431300117001-2__06880.1723456574.jpg",
+      "description": "Lock Colored Stones Full Set in 18K Gold - 3 pieces",
+      "price": "260,300"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }
