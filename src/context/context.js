@@ -6,7 +6,9 @@ const AppContext = createContext({
 userData: {},
 setUserData:()=>{},
 setIsLogged: ()=>{},
-isLogged : false
+isLogged : false,
+productId : 0,
+setProductID: ()=>{}
 
 })
 

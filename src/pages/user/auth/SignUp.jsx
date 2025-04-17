@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {
   Card,
   CardBody,
@@ -9,7 +9,10 @@ import {
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { useNavigate,Link } from 'react-router-dom'
+import AppContext from '../../../context/context'
+
 const SignUp = () => {
+  const {setIsLogged,setUserData} = useContext(AppContext)
   const [user,setUser] = useState({
     name:"",
     email:"" ,
@@ -37,9 +40,13 @@ const sendUserData = (e) =>{
     }).then((res) => {
       const myUser = res.data.find(z => z.email== user.email)
       localStorage.setItem("id",myUser.id)
+      setIsLogged(true)
+      setUserData(user)
+      navigate("/")
   
     })
-    navigate("/")
+    
+    // 
     
   } else{
      Swal.fire({

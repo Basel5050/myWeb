@@ -11,7 +11,7 @@ import {
 } from "@material-tailwind/react";
 import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
-import AppContext from '../../context/context';
+import AppContext from '../../../context/context';
 
 const Login = () => {
   const{users,setUserData,setIsLogged} = useContext(AppContext)

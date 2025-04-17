@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {
     Card,
     CardHeader,
@@ -7,8 +7,9 @@ import {
     Typography,
     Button,
   } from "@material-tailwind/react";
-import AppContext from '../../../context/context';
 import MyProduct from './MyProduct';
+import axios from 'axios';
+import AppContext from '../../../../context/context';
    
   function CheckIcon() {
     return (
@@ -29,14 +30,22 @@ import MyProduct from './MyProduct';
     );
   }
 const MyCards = () => {
-  const {products}= useContext(AppContext)
+  const {products,productId,setProductID,setUserData,userData}= useContext(AppContext)
   
   
+  useEffect(()=>{
+    console.log(productId);
+    
+  },[productId])
   return (
     <div className="flex flex-wrap justify-center gap-6 p-4">
-    {products.map(({ id, image, secImage, description, price }) => (
+    {products.map((myproduct)=>
+    { 
+      return(
+      
       <Card
-        key={id}
+      
+        key={myproduct.id}
         variant="gradient"
         className="w-[280px] bg-brown-300 shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col justify-between"
       >
@@ -51,33 +60,35 @@ const MyCards = () => {
             color="white"
             className="font-medium uppercase"
           >
-            {description}
+            {myproduct.description}
           </Typography>
           <Typography
             variant="h2"
             color="white"
             className="mt-4 text-2xl font-semibold"
           >
-            ${price}
+            ${myproduct.price}
           </Typography>
         </CardHeader>
 
         <div className="p-4 flex justify-center">
-          <MyProduct image={image} secImage={secImage} />
+          <MyProduct image={myproduct.image} secImage={myproduct.secImage} />
         </div>
 
         <CardFooter className="px-4 pb-4 mt-auto">
-          <Button
+          <Button 
             size="lg"
             color="white"
             className="w-full hover:scale-[1.02] focus:scale-[1.02] active:scale-100 transition-transform"
             ripple={false}
+            onMouseDown={()=>setProductID({...myproduct, q:+1})}
+            onMouseUp={()=>setUserData({...userData,cart:[...userData.cart,productId]})}
           >
             Buy Now
           </Button>
         </CardFooter>
       </Card>
-    ))}
+    )} )}
   </div>
    ) 
   

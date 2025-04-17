@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import AppContext from '../../../context/context';
+import AppContext from '../../../../context/context'
 
 const MyProduct = ({image,secImage}) => {
    const {products}=useContext(AppContext)
