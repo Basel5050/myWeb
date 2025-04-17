@@ -1,18 +1,36 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Card, CardBody, Typography, Button } from "@material-tailwind/react";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import AppContext from "../../../context/context";
+import axios from "axios";
 
 
 
 const UserData = () => {
-    const {users}=useContext(AppContext)
+    const {users,setUsers}=useContext(AppContext)
+
+
+
+
+    useEffect(()=>{
+        axios({
+            method: 'GET',
+            url: "http://localhost:3000/users"
+          }).then((res) => {
+            setUsers(res.data)})
+    },[])
     const handleEdit = (id) => {
         console.log("Edit user:", id);
       };
     
       const handleDelete = (id) => {
-        console.log("Delete user:", id);
+        const myNewUsers = users.filter(user => user.id !== id)
+        setUsers(myNewUsers)
+        axios({
+            method: "delete",
+            url : `http://localhost:3000/users/${id}`
+        })
+        
       };
     
       return (

@@ -2,17 +2,28 @@ import React, { useContext } from "react";
 import { Card, CardBody, Typography, Button } from "@material-tailwind/react";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import AppContext from "../../../context/context";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 
 const Products = () => {
-    const {products} = useContext(AppContext)
+    const {products,setProducts} = useContext(AppContext)
     const handleEdit = (id) => {
-        console.log("Edit product:", id);
-      };
+        console.log('edit');
+          
+                  };
     
       const handleDelete = (id) => {
-        console.log("Delete product:", id);
+        const myNewProducts = products.filter(product => product.id !== id)
+        setProducts(myNewProducts)
+console.log(my);
+
+       
+        axios({
+                    method: "delete",
+                    url : `http://localhost:3000/products/${id}`
+                }) 
       };
     
       return (
@@ -52,13 +63,19 @@ const Products = () => {
                       <td className="p-4">{product.price}</td>
                      
                       <td className="p-4 flex justify-center gap-3">
+                        <Link
+                        to={`/admin/products/${product.id}`}
+                        >
                         <Button
                           size="sm"
                           className="bg-[#8b5e3c] hover:bg-[#744a2e] text-white px-4 py-1 rounded"
-                          onClick={() => handleEdit(product.id)}
+                          onMouseDown={() => handleEdit(product.id)}
+                          
                         >
                           <FaEdit />
                         </Button>
+                        </Link>
+                        
                         <Button
                           size="sm"
                           className="bg-red-500 hover:bg-red-700 text-white px-4 py-1 rounded"

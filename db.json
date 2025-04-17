@@ -6,7 +6,24 @@
       "email": "baselashraf1@gmail.com",
       "password": "1234567",
       "role": "admin",
-      "cart": []
+      "cart": [
+        {
+          "id": 2,
+          "image": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/3450/12489/413391800072171-2__08454.1723455607.jpg",
+          "secImage": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/3450/12488/413391800072171-1__71662.1736404496.jpg",
+          "description": "Circle Cubic Zirconia Twin Rings in 18K Gold",
+          "price": "18600",
+          "q": 1
+        },
+        {
+          "id": 1,
+          "image": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/4281/18902/114912500052450-1__98776.1723639920.jpg",
+          "secImage": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/4281/18903/114912500052450-2__88751.1723639921.jpg",
+          "description": "Links Chain Necklace in 18K Gold",
+          "price": "8100",
+          "q": 1
+        }
+      ]
     },
     {
       "name": "maro",
@@ -41,14 +58,6 @@
       "id": 5
     },
     {
-      "name": "myzizisa",
-      "email": "memaszo@gmail.com",
-      "password": "123456789sa",
-      "role": "user",
-      "cart": [],
-      "id": 6
-    },
-    {
       "name": "sadsad",
       "email": "mesadasmo@gmail.com",
       "password": "1234567893455",
@@ -62,7 +71,7 @@
       "id": 1,
       "image": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/4281/18902/114912500052450-1__98776.1723639920.jpg",
       "secImage": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/4281/18903/114912500052450-2__88751.1723639921.jpg",
-      "description": "Links Chain Necklace in 18K Gold",
+      "description": "Links Chain Necklace in 1",
       "price": "8100"
     },
     {

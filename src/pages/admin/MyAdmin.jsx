@@ -6,6 +6,7 @@ import AppContext from '../../context/context'
 import Login from '../user/auth/Login'
 import UserData from './userData/UserData'
 import Products from './products/Products'
+import ViewProduct from './products/viewProduct/ViewProduct'
 
 const MyAdmin = () => {
   const {userData}= useContext(AppContext)
@@ -16,6 +17,7 @@ const MyAdmin = () => {
         <Route index element={ <Home/>  }/>
         <Route path='users' element={ <UserData/>  }/>
         <Route path='products' element={ <Products/>  }/>
+        <Route path='products/:id' element={ <ViewProduct/> }/>
         </Routes>
     </div>
   )

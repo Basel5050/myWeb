@@ -15,6 +15,7 @@ const [users,setUsers] = useState([])
   const [userData,setUserData] = useState({})
   const [isLogged,setIsLogged] = useState(false)
   const [productId,setProductID] = useState(0)
+  const [statusChange, setStatusChange] = useState(true)
   // if (localStorage.id) {
   //   setIsLogged(true)
   // }
@@ -51,7 +52,7 @@ useEffect(()=>{
   }).catch((error) => {
     console.error("Error fetching data:", error);})
     
-},[])
+},[statusChange])
 // useEffect(()=>{
 // if(isLogged){
 // axios({
@@ -66,7 +67,7 @@ useEffect(()=>{
 
   return (
 
-    <AppContext.Provider value={{products,users,userData,setUserData,setIsLogged,isLogged,productId,setProductID}}>
+    <AppContext.Provider value={{products,users,userData,setUserData,setIsLogged,isLogged,productId,setProductID,setProducts,setUsers,setStatusChange,statusChange}}>
  <div className=' w-full '>
     
     <Routes>
