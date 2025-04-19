@@ -29,7 +29,7 @@ const GeneralNavBar = () => {
 
   
     return (
-        <nav className="fixed w-full z-50  bg-black/30 backdrop-blur-md">
+        <nav className="fixed w-full z-50  bg-black/30 lg:backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
           {/* Logo */}
           <div  className="text-2xl font-bold text-yellow-700 flex items-center gap-2">
@@ -99,7 +99,7 @@ const GeneralNavBar = () => {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ duration: 0.3 }}
-              className="md:hidden fixed top-0 left-0 w-3/4 h-full bg-white shadow-md text-brown-800 font-medium flex flex-col space-y-6 p-6 z-40"
+              className="md:hidden fixed top-0 left-0 w-3/4 h-full bg-white  text-brown-800 font-medium flex flex-col space-y-6 p-6 z-40"
             >
                 <Typography
                 as={Link}
