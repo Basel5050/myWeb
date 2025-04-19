@@ -15,7 +15,7 @@ const UserData = () => {
     useEffect(()=>{
         axios({
             method: 'GET',
-            url: "http://localhost:3000/users"
+            url: "https://rain-flawless-tamarind.glitch.me/users"
           }).then((res) => {
             setUsers(res.data)})
     },[])
@@ -28,7 +28,7 @@ const UserData = () => {
         setUsers(myNewUsers)
         axios({
             method: "delete",
-            url : `http://localhost:3000/users/${id}`
+            url : `https://rain-flawless-tamarind.glitch.me/users/${id}`
         })
         
       };

@@ -29,14 +29,14 @@ const sendUserData = (e) =>{
   if (user.name.length>3&&user.email.includes("@")&&user.password.length>6) {
     axios({
       method: 'POST',
-      url: "http://localhost:3000/users",
+      url: "https://rain-flawless-tamarind.glitch.me/users",
       data: user
     }
   
     )
     axios({
       method: 'GET',
-      url: "http://localhost:3000/users"
+      url: "https://rain-flawless-tamarind.glitch.me/users"
     }).then((res) => {
       const myUser = res.data.find(z => z.email== user.email)
       localStorage.setItem("id",myUser.id)

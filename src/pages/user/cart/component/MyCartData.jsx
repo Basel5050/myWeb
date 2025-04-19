@@ -7,7 +7,7 @@ const MyCartData = () => {
     const navigate = useNavigate()
     
    
-      const total = userData.cart?.reduce((acc, item) => acc + parseInt(item.price), 0);
+      const total = userData.cart?.reduce((acc, item) => acc + parseInt(item.price)*item.q, 0);
       const removeProduct= (e)=>{
         const upadetCart = userData.cart.filter(product => product.id !== e)
         setUserData({...userData, cart:upadetCart})
@@ -15,7 +15,7 @@ const MyCartData = () => {
         
         axios({
           method: "PATCH",
-          url:`http://localhost:3000/users/${localStorage.id}  `,
+          url:`https://rain-flawless-tamarind.glitch.me/users/${localStorage.id}  `,
           data:{
             cart: upadetCart
           }
@@ -39,8 +39,8 @@ isLogged?(<div className="min-h-screen bg-[#f9f4f0] pt-24 px-4 md:px-16 text-[#3
                 <img src={item.image} alt={item.name} className="w-24 h-24 rounded-lg object-cover" />
                 <div className="ml-4 flex-1">
                   <h3 className="text-xl font-medium">{item.name}</h3>
-                  <p className="text-sm text-[#8c6e5a]">Quantity: {item.price}</p>
-                  <p className="text-lg font-bold mt-1">${parseInt(item.price) * 1}</p>
+                  <p className="text-sm text-[#8c6e5a]">Quantity: {item.q}</p>
+                  <p className="text-lg font-bold mt-1">${parseInt(item.price) * item.q}</p>
                 </div>
                 <button onClick={()=>removeProduct(item.id)} className="text-red-500 hover:text-red-700 font-bold">Remove</button>
               </div>

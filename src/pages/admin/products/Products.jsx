@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Card, CardBody, Typography, Button } from "@material-tailwind/react";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import AppContext from "../../../context/context";
@@ -17,12 +17,12 @@ const Products = () => {
       const handleDelete = (id) => {
         const myNewProducts = products.filter(product => product.id !== id)
         setProducts(myNewProducts)
-console.log(my);
+;
 
        
         axios({
                     method: "delete",
-                    url : `http://localhost:3000/products/${id}`
+                    url : `https://rain-flawless-tamarind.glitch.me/products/${id}`
                 }) 
       };
     

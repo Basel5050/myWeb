@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import {
     Card,
@@ -10,8 +10,12 @@ import {
     Textarea,
   } from "@material-tailwind/react";
   import { FaEdit } from "react-icons/fa";
+  import { useNavigate } from "react-router-dom";
+import AppContext from '../../../../context/context';
+
 const ViewProduct = () => {
-    
+  const {seteditproduct,editProduct}= useContext(AppContext)
+  const navigate = useNavigate()
     
     const {id} = useParams()
 const [myProduct,setMyProduct] = useState({})
@@ -37,8 +41,14 @@ const [product, setProduct] = useState({
     e.preventDefault();
     axios({
         method:'PATCH',
-        url: `http://localhost:3000/products/${id}`,
+        url: `https://rain-flawless-tamarind.glitch.me/products/${id}`,
         data: myProduct
+    }).then(res => {
+      if(res.status == 200){
+        seteditproduct(!editProduct)
+        navigate(-1)
+
+      }
     })
   };
 

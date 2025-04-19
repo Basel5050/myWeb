@@ -16,6 +16,7 @@ const [users,setUsers] = useState([])
   const [isLogged,setIsLogged] = useState(false)
   const [productId,setProductID] = useState(0)
   const [statusChange, setStatusChange] = useState(true)
+  const [editProduct, seteditproduct] = useState(true)
   // if (localStorage.id) {
   //   setIsLogged(true)
   // }
@@ -24,7 +25,7 @@ useEffect(()=>{
     setIsLogged(true)
     axios({
       method: 'GET',
-      url: `http://localhost:3000/users/${localStorage.id}`
+      url: `https://rain-flawless-tamarind.glitch.me/users/${localStorage.id}`
     }).then((res) => {
       setUserData(res.data)
   
@@ -33,7 +34,7 @@ useEffect(()=>{
       }else{
         axios({
           method: 'GET',
-          url: "http://localhost:3000/users"
+          url: "https://rain-flawless-tamarind.glitch.me/users"
         }).then((res) => {
           setUsers(res.data)
       
@@ -45,29 +46,29 @@ useEffect(()=>{
 
   axios({
     method: 'GET',
-    url: "http://localhost:3000/products"
+    url: "https://rain-flawless-tamarind.glitch.me/products"
   }).then((res) => {
     setProducts(res.data)
 
   }).catch((error) => {
     console.error("Error fetching data:", error);})
     
-},[statusChange])
-// useEffect(()=>{
-// if(isLogged){
-// axios({
-//   method: "PUT",
-//   url: `http://localhost:3000/users/${localStorage.id}`,
-//   data: userData
-// })}
-// console.log(userData);
+},[statusChange,editProduct])
+useEffect(()=>{
+if(isLogged){
+axios({
+  method: "PUT",
+  url: `https://rain-flawless-tamarind.glitch.me/users/${localStorage.id}`,
+  data: userData
+})}
+console.log(userData);
 
-// },[isLogged])
+},[userData])
 
 
   return (
 
-    <AppContext.Provider value={{products,users,userData,setUserData,setIsLogged,isLogged,productId,setProductID,setProducts,setUsers,setStatusChange,statusChange}}>
+    <AppContext.Provider value={{products,users,userData,seteditproduct,editProduct,setUserData,setIsLogged,isLogged,productId,setProductID,setProducts,setUsers,setStatusChange,statusChange}}>
  <div className=' w-full '>
     
     <Routes>

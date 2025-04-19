@@ -8,19 +8,35 @@
       "role": "admin",
       "cart": [
         {
+          "id": 1,
+          "image": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/4281/18902/114912500052450-1__98776.1723639920.jpg",
+          "secImage": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/4281/18903/114912500052450-2__88751.1723639921.jpg",
+          "description": "Links Chain Necklace in 1",
+          "price": "8500",
+          "q": 5
+        },
+        {
+          "id": 4,
+          "image": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/3928/13615/113431300117001-1__04553.1723456574.jpg",
+          "secImage": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/3928/13616/113431300117001-2__06880.1723456574.jpg",
+          "description": "Lock Colored Stones Full Set in 18K Gold - 3 pieces",
+          "price": "260300",
+          "q": 2
+        },
+        {
+          "id": 3,
+          "image": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/3907/13545/113011400067001-1__02349.1730966432.jpg",
+          "secImage": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/3907/13546/113011400067001-2__25367.1730966432.jpg",
+          "description": "Links Shape Set in 18K Gold - 2 pieces",
+          "price": "63340",
+          "q": 1
+        },
+        {
           "id": 2,
           "image": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/3450/12489/413391800072171-2__08454.1723455607.jpg",
           "secImage": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/3450/12488/413391800072171-1__71662.1736404496.jpg",
           "description": "Circle Cubic Zirconia Twin Rings in 18K Gold",
           "price": "18600",
-          "q": 1
-        },
-        {
-          "id": 1,
-          "image": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/4281/18902/114912500052450-1__98776.1723639920.jpg",
-          "secImage": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/4281/18903/114912500052450-2__88751.1723639921.jpg",
-          "description": "Links Chain Necklace in 18K Gold",
-          "price": "8100",
           "q": 1
         }
       ]
@@ -72,28 +88,32 @@
       "image": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/4281/18902/114912500052450-1__98776.1723639920.jpg",
       "secImage": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/4281/18903/114912500052450-2__88751.1723639921.jpg",
       "description": "Links Chain Necklace in 1",
-      "price": "8100"
+      "price": "8500",
+      "q": 1
     },
     {
       "id": 2,
       "image": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/3450/12489/413391800072171-2__08454.1723455607.jpg",
       "secImage": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/3450/12488/413391800072171-1__71662.1736404496.jpg",
       "description": "Circle Cubic Zirconia Twin Rings in 18K Gold",
-      "price": "18600"
+      "price": "18600",
+      "q": 1
     },
     {
       "id": 3,
       "image": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/3907/13545/113011400067001-1__02349.1730966432.jpg",
       "secImage": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/3907/13546/113011400067001-2__25367.1730966432.jpg",
       "description": "Links Shape Set in 18K Gold - 2 pieces",
-      "price": "63340"
+      "price": "63340",
+      "q": 1
     },
     {
       "id": 4,
       "image": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/3928/13615/113431300117001-1__04553.1723456574.jpg",
       "secImage": "https://cdn11.bigcommerce.com/s-t4k1ukevvr/images/stencil/1440w/products/3928/13616/113431300117001-2__06880.1723456574.jpg",
       "description": "Lock Colored Stones Full Set in 18K Gold - 3 pieces",
-      "price": "260300"
+      "price": "260300",
+      "q": 1
     }
   ],
   "profile": {

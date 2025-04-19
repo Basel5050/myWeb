@@ -31,7 +31,24 @@ import AppContext from '../../../../context/context';
   }
 const MyCards = () => {
   const {products,productId,setProductID,setUserData,userData}= useContext(AppContext)
-  
+  const addToCart = (id)=>{
+    const productAddedCheck = !userData.cart.some(product => product.id == id)
+    const increaseQuantity = userData.cart.map(product => {
+      if (product.id == id) {
+        return { ...product, q: product.q + 1 };
+      }
+      return product;
+    })
+    console.log(increaseQuantity);
+    
+    if(productAddedCheck){
+      setUserData({...userData,cart:[...userData.cart,productId]})
+    }    else {
+      setUserData({...userData,cart:increaseQuantity})
+
+    }
+    
+  }
   
   useEffect(()=>{
     console.log(productId);
@@ -82,7 +99,7 @@ const MyCards = () => {
             className="w-full hover:scale-[1.02] focus:scale-[1.02] active:scale-100 transition-transform"
             ripple={false}
             onMouseDown={()=>setProductID({...myproduct, q:+1})}
-            onMouseUp={()=>setUserData({...userData,cart:[...userData.cart,productId]})}
+            onMouseUp={()=>addToCart(myproduct.id)}
           >
             Buy Now
           </Button>
