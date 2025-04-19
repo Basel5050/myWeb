@@ -1,4 +1,5 @@
 import AboutUs from "./components/AboutUs"
+import GoldInfo from "./components/GoldInfo"
 import HomeCarrousal from "./components/HomeCarrousal"
 import LatestProducts from "./components/LatestProducts"
 
@@ -7,6 +8,7 @@ const Home = () => {
     <div className="    w-full justify-center h-full  ">
       <HomeCarrousal/>
       <LatestProducts/>
+      <GoldInfo/>
       <AboutUs/>
     </div>
   )
